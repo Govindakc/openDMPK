@@ -1,5 +1,5 @@
 # openDMPK
-### Prediction of ADMET properties for drug or durg like compoungs
+### Prediction of ADMET properties for drug or durg like compounds
 
 ## Set up
 ```bash
