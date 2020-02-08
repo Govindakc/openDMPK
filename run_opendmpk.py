@@ -9,6 +9,7 @@
 import os, sys, joblib, time, json
 import pandas as pd
 import numpy as np
+import argparse
 from tqdm import tqdm
 from descriptors import Features_Generations
 
@@ -37,6 +38,7 @@ class openDMPK:
         model_result = {}
         
         for model_name, model in tqdm(zip(self.model_names, self.models)):
+            # PlasmaProteinBinding and TetrahymenaPyriformisToxicity are regression models
             if model_name == 'PlasmaProteinBinding':
                 model_result[model_name] = str(model.predict(features)[0].round(4)) +' %'
             
@@ -44,6 +46,8 @@ class openDMPK:
                 model_result[model_name] = str(model.predict(features)[0].round(4)) +' pIGC50 (ug/L)'
             
             else:
+                # First index ->  probability that the data belong to class 0,
+                # Second index ->  probability that the data belong to class 1.
                 model_result[model_name]  = model.predict_proba(features)[0][1].round(2)
         
         final_results[smiles] = model_result
@@ -52,10 +56,15 @@ class openDMPK:
             json.dump(str(final_results), json_file)
         print('Result file is saved')
 
-def main():
-    smiles = sys.argv[1]
-    opendmpk =openDMPK()
-    opendmpk.predict(smiles)
-
 if __name__=='__main__':
-    main()
+    
+    # construct the argument parse and parse the arguments
+    ap = argparse.ArgumentParser(description = "Predict ADMET properties using  openDMPK")
+    ap.add_argument("-s", "--smiles", action = 'store', dest = 'smiles', 
+            type = str, required = True, help = "SMILES string")
+    
+    args = vars(ap.parse_args())
+    input_smiles = args['smiles']
+    
+    opendmpk = openDMPK()
+    opendmpk.predict(input_smiles)
