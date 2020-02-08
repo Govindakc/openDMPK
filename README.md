@@ -1,7 +1,7 @@
 # openDMPK
-### Prediction of ADMET properties for drug or durg like compoungs
+### Prediction of ADMET properties for drug or durg like compounds
 
-# Set up
+## Set up
 ```bash
 pip install -r requirements.txt
 ```
