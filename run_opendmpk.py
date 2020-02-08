@@ -4,7 +4,7 @@
 # Last modified: 2/8/2020           #
 # ********************************* #
 
-# Usage: python run_opendmpk.py SMILES ( eg. python run_opendmpk.py "CC(O)CO" )
+# Usage: python run_opendmpk.py --smiles SMILES ( eg. python run_opendmpk.py --smiles "CC(O)CO" )
 
 import os, sys, joblib, time, json
 import pandas as pd
