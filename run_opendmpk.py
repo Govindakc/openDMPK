@@ -40,10 +40,10 @@ class openDMPK:
         for model_name, model in tqdm(zip(self.model_names, self.models)):
             # PlasmaProteinBinding and TetrahymenaPyriformisToxicity are regression models
             if model_name == 'PlasmaProteinBinding':
-                model_result[model_name] = str(model.predict(features)[0].round(4)) +' %'
+                model_result[model_name] = model.predict(features)[0].round(4).astype(str) +' %'
             
             elif model_name == 'TetrahymenaPyriformisToxicity': 
-                model_result[model_name] = str(model.predict(features)[0].round(4)) +' pIGC50 (ug/L)'
+                model_result[model_name] = model.predict(features)[0].round(4).astype(str) +' pIGC50 (ug/L)'
             
             else:
                 # First index ->  probability that the data belong to class 0,
