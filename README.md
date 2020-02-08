@@ -1,6 +1,7 @@
 # openDMPK
 ### Prediction of ADMET properties for drug or durg like compounds
-
+* A total of 15 pharmokinetic propeties can be predicted using (13 classification and 2 regression models)
+* The classification models predict the probability of being active (eg. toxic), where as regression models predict a numeric quantification of the pharmacokinetic or toxicity property
 ## Set up
 ```bash
     conda env create -f environment.yml
