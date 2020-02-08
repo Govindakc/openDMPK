@@ -1,11 +1,13 @@
 # openDMPK
 ### Prediction of ADMET properties for drug or durg like compoungs
 
-# Set up
+## Set up
 ```bash
-pip install -r requirements.txt
+    conda env create -f environment.yml
+    conda activate opendmpk
 ```
-Usage: run_openDMPK.py [-h] [--smiles SMILES]
+
+Usage: python run_openDMPK.py [-h] [--smiles SMILES]
 
 
 Example: 
@@ -22,3 +24,7 @@ Results:
                         'PlasmaProteinBinding': '0.3422 %', 
                         'TetrahymenaPyriformisToxicity': '0.1885 pIGC50 (ug/L)'}}
 ```
+## Docker 
+* Build the docker image `docker build -t opendmpk .` and run `docker run --rm opendmpk` . Provide SMILES as `docker run --rm opendmpk <compound_smiles>`.
+* Download: `docker pull kcgovinda/opendmpk:first`
+* Run the container: `docker run --rm kcgovinda/opendmpk:first --smiles <compound_smiles>`.
