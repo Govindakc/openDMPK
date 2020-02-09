@@ -1,6 +1,6 @@
 # openDMPK
 ### Prediction of ADMET properties for drug or durg like compounds
-* A total of 15 pharmokinetic propeties can be predicted using (13 classification and 2 regression models)
+* A total of 20 pharmokinetic propeties can be predicted using (18 classification and 2 regression models)
 * The classification models predict the probability of being active (eg. toxic), where as regression models predict a numeric quantification of the pharmacokinetic or toxicity property
 ## Set up
 ```bash
@@ -27,5 +27,5 @@ Results:
 ```
 ## Docker 
 * Build the docker image `docker build -t opendmpk .` and run `docker run --rm opendmpk` . Provide SMILES as `docker run --rm opendmpk <compound_smiles>`.
-* Download: `docker pull kcgovinda/opendmpk:first`
-* Run the container: `docker run --rm kcgovinda/opendmpk:first --smiles <compound_smiles>`.
+* Download: `docker pull kcgovinda/opendmpk:latest`
+* Run the container: `docker run --rm kcgovinda/opendmpk:latest --smiles <compound_smiles>`.
