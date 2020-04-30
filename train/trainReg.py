@@ -1,6 +1,6 @@
 # ********************************************
 # Script for Training (Regresson)       ******
-# (Grid search for model model tuning)  ******
+# (Grid search for model tuning)  ******
 # ********************************************
 #  Last modified: 4/29/2020
 
