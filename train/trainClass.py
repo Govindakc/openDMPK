@@ -1,6 +1,6 @@
 # ********************************************
-# Script for Training (Classification)  ******
-# (Grid search for model tuning)	    ******
+# Script for Training (Classification)
+# (Grid search for model tuning)	    
 # ********************************************
 # Last modified: 4/29/2020
 
