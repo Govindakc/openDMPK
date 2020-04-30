@@ -49,7 +49,7 @@ class Model_Development:
         kappa = metrics.cohen_kappa_score(y_test, y_pred)
         mcc = metrics.matthews_corrcoef(y_test, y_pred)
 #        report = metrics.classification_report(y_test, y_pred)
-        tp, fn, fp, tn = metrics.confusion_matrix(y_test, y_pred).ravel()
+        tn, fp, fn, tp = metrics.confusion_matrix(y_test, y_pred).ravel()
         SE = float(tp)/(tp+fn)
         SP = float(tn)/(tn+fp)
         PPV = float(tp)/(tp+fp)
