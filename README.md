@@ -4,8 +4,9 @@
 * The classification models predict the probability of being active (eg. toxic), where as regression models predict a numeric quantification of the pharmacokinetic or toxicity property
 ## Set up
 ```bash
-    conda env create -f environment.yml
+    conda create -c conda-forge -n opendmpk rdkit==2018.09.1
     conda activate opendmpk
+    pip install -r requirements.txt
 ```
 
 Usage: python run_openDMPK.py [-h] [--smiles SMILES]
